@@ -6,7 +6,7 @@ const List = ({ listData }) => {
 
     return (
         <View>
-            <FlatList data={listData} renderItem={({ item, index }) => (
+            <FlatList data={listData} renderItem={({ item }) => (
                 <View >
                     <View>
                         <ListItem  listItem ={item}/>
