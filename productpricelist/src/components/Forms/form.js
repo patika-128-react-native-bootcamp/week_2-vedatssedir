@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 const Forms = ({ onChangeList }) => {
     const [value, setValue] = useState({ productName: "", price: 0 });
+    
     const handleFormData = () => {
         onChangeList(value);
     }
@@ -17,8 +18,6 @@ const Forms = ({ onChangeList }) => {
         </View>
     );
 }
-
-
 const style = StyleSheet.create({
     form_textInput: {
         borderRadius: 10,
@@ -45,7 +44,6 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     }
-
 });
 
 
