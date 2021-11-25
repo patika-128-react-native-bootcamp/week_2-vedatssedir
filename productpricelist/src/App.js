@@ -13,11 +13,13 @@ const App = () => {
 
   const handleList = (value) => {
     setList([...list, value]);
+    
   }
+
   return (
     <SafeAreaView style={style.main_container}>
       <View style={style.container}>
-        <Button titleArray={buttonTextDetail} />
+        <Button titleArray={buttonTextDetail}  list={list} onChangeList={handleList} />
       </View>
       <ScrollView>
         <View style={style.main_list_container}>
