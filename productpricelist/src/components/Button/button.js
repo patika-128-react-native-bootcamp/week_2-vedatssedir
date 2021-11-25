@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 
-const Button = ({ titleArray }) => {
+const Button = ({ titleArray, list,onChangeList }) => {
     const [selected, setSelected] = useState(null);
 
     const handleSelectedItem = (item) => {
         setSelected(item);
+        let data;
         switch (item.Id) {
             case 1: {
-                console.log("Artan Fiyat");
+                data=list.sort((a,b)=>{
+                    return parseInt(a.price)  - parseInt(b.price);
+                });   
+                onChangeList(data);          
                 break;
             }
             case 2: {
-                console.log("Azalan Fiyat");
+                 data=list.sort((a,b)=>{
+                    return parseInt(b.price)  - parseInt(a.price);
+                });
+                onChangeList(data);          
                 break;
             }
             case 3: {
@@ -49,7 +56,5 @@ const style = StyleSheet.create({
         fontWeight: 'bold'
     }
 });
-
-
 
 export default Button;
